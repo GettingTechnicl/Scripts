@@ -52,4 +52,4 @@ $webclient.DownloadFile($uri, $awSysmonAssistant)
 Start-Process -FilePath $Msiexec -ArgumentList "/i $awSysmonAssistant","/Q","/NORESTART" -Wait 
 
 # Install AW Agent
-Start-Process -FilePath $Msiexec -ArgumentList "/i $awAgent" -Wait 
+Start-Process -FilePath $Msiexec -ArgumentList "/i $awAgent","/Q","/NORESTART" -Wait 
