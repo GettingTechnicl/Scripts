@@ -1,0 +1,17 @@
+# Hard Match
+# https://www.itpromentor.com/soft-vs-hard-match/
+
+# Command
+# 
+
+$Datas = import-csv C:\temp\users.csv
+    
+ foreach($Data in $Datas){
+#Param(
+#$username
+#)
+$365User="$data.UserPrincipalName"
+$guid=(get-ADUser $data.username).Objectguid
+$immutableID=[system.convert]::ToBase64String($guid.tobytearray())
+Set-MsolUser -UserPrincipalName "$365User" -ImmutableId $immutableID 
+ }

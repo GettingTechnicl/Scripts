@@ -25,11 +25,11 @@ $webclient = New-Object System.Net.WebClient
 $uri = New-Object System.Uri($ftp)
 $webclient.DownloadFile($uri, $ODT_xml)
 
-# Download Install Files
-C:\Windows\TEMP\setup.exe /download C:\Windows\TEMP\ValleyHonda_OfficeRemove_365Deploy.xml
-	
 # Remove Previous Office
 C:\Windows\TEMP\setup.exe /configure C:\Windows\TEMP\ValleyHonda_OfficeRemove.xml
+
+# Download Install Files
+C:\Windows\TEMP\setup.exe /download C:\Windows\TEMP\ValleyHonda_OfficeRemove_365Deploy.xml
 
 # Install using downloaded files
 C:\Windows\TEMP\setup.exe /configure C:\Windows\TEMP\ValleyHonda_OfficeRemove_365Deploy.xml

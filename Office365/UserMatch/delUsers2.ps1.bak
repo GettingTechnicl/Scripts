@@ -1,0 +1,9 @@
+# 365 Authentication
+$credential = Get-Credential
+Connect-MsolService -Credential $credential
+
+# Import CSV
+$Datas = import-csv C:\temp\users.csv
+	 foreach($Data in $Datas){
+	 	Remove-MSOLuser -UserPrincipalName "$data.UserPrincipalName" -RemoveFromRecycleBin
+	}
